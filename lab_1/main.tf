@@ -254,14 +254,5 @@ resource "azurerm_cosmosdb_sql_container" "main" {
   database_name       = azurerm_cosmosdb_sql_database.main.name
   partition_key_paths = ["/id"] # Adjust based on your data model
 
-  # 400 RU/s is the minimum and good for development
   throughput = 400
-
-  # Uncomment and adjust if you need indexing policy
-  # indexing_policy {
-  #   indexing_mode = "consistent"
-  #   included_path {
-  #     path = "/*"
-  #   }
-  # }
 }
