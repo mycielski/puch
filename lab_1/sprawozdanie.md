@@ -1,11 +1,15 @@
 # Ćwiczenie: Baza danych MS SQL Server w Azure
 
 Mając doświadczenie w pracy z Azure wiedziałem, że nie chcę korzystać z panelu web do realizacji zadań.
-Zdecydowałem się zatem na skorzystanie z narzędzi CLI. Całość kodu napisanego do realizacji zadań dostępna jest do wglądu na [repozytorium GitHub](https://github.com/mycielski/puch/tree/main/lab_1).
+Zdecydowałem się zatem na skorzystanie z narzędzi CLI. Całość kodu napisanego do realizacji zadań dostępna jest do
+wglądu na [repozytorium GitHub](https://github.com/mycielski/puch/tree/main/lab_1).
 
 ## Utworzenie konta w Azure
 
-Konto w Azure utworzyłem już kilka semestrów temu także po prostu się do niego zalogowałem (w panelu oraz używając narzędzia CLI `az`). Nie było w nim żadnych zasobów.
+Konto w Azure utworzyłem już kilka semestrów temu także po prostu się do niego zalogowałem (w panelu oraz używając
+narzędzia CLI `az`). Nie było w nim żadnych zasobów.
+
+![](images/az_acc_show.png)
 
 ## Utworzenie instancji Azure SQL Database
 
@@ -15,17 +19,20 @@ Z tego samego powodu darowałem sobie replikację i backup.
 ## Połączenie z bazą danych
 
 Zadanie realizowałem na swoim komputerze Macbook, zatem nie miałem dostępu do SSMS.
-Aby móc wykorzystać SSMS stworzyłem VM w Azure z tym programem. Poniższy zrzut ekranu przedstawia połączenie z tego VM do mojej bazy.
-VM została zabezpieczona przy użyciu reguły pozwalającej na przychodzący ruch sieciowy wyłącznie z mojego publicznego adresu IPv4.
+Aby móc wykorzystać SSMS stworzyłem VM w Azure z tym programem. Poniższy zrzut ekranu przedstawia połączenie z tego VM
+do mojej bazy.
+VM została zabezpieczona przy użyciu reguły pozwalającej na przychodzący ruch sieciowy wyłącznie z mojego publicznego
+adresu IPv4.
 
 Całe połączenie wyglądało zatem tak:
+
 ```mermaid
 flowchart TD
     A[Macbook]
     B[Jumphost]
     C[SQL DB]
     A -->|RDP| B
-    B --> |SSMS| C
+    B -->|SSMS| C
 ```
 
 ![](images/ssms_sqlserver.png)
@@ -39,7 +46,8 @@ Do **firewall**a bazy danych dodałem regułę pozwalającą na przychodzący ru
 
 ## Praca z Azure Table Storage
 
-Utworzyłem storage account, w nim tabelę, a w tabeli encję. Próbowałem napisać PowerQuery w Excelu aby połączyć się z tabelą, ale niestety nie udało mi się tego zrobić.
+Utworzyłem storage account, w nim tabelę, a w tabeli encję. Próbowałem napisać PowerQuery w Excelu aby połączyć się z
+tabelą, ale niestety nie udało mi się tego zrobić.
 
 ### CRUD
 
